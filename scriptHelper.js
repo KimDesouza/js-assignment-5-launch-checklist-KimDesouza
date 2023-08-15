@@ -27,12 +27,24 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   let pilotName = document.getElementById('pilotName');
-   let copilotName = document.getElementById('copilotName');
-   let fuelLevel = document.getElementById('fuelLevel');
-   let cargoLevel = document.getElementById('cargoMass');
+   let pilotName = document.getElementById('pilotStatus');
+   let copilotName = document.getElementById('copilotStatus');
+   let fuelLevel = document.getElementById('fuelStatus');
+   let cargoLevel = document.getElementById('cargoStatus');
+   
+   //let launchStatus = document.getElementById('launchStatus');
 
-   console.log(`Pilot ${pilotName.value} is ready for launch`);
+   if ((validateInput(pilot) === "Is a Number") || (validateInput(copilot) === "Is a Number") || (validateInput(fuelLevel) === "Not a Number") || (validateInput(cargoLevel) === "Not a Number")){
+    alert("Make sure to enter valid information for each field!");
+   } else if((validateInput(pilot) === "Empty") || (validateInput(copilot) === "Empty") || (validateInput(fuelLevel) === "Empty") || (validateInput(cargoLevel) === "Empty")){
+    alert("All fields are required!");
+   } //else {
+    //list.style.visibility = "visible";
+    //pilotName.innerHTML = `1. Pilot ${pilotName.value} is ready for launch`;
+    //copilotName.innerHTML = `2. Co-pilot ${copilotName.value} is ready for launch`;
+    //if (fuelLevel < 10000 && cargoLevel > 10000){
+
+    
 
 }
 
